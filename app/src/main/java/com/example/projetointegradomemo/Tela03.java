@@ -20,7 +20,7 @@ import java.util.Collections;
 
 public class Tela03 extends AppCompatActivity implements View.OnClickListener, Runnable {
     private TextView textoDoNome;
-    private ImageView img1, img2, img3, img4;
+    private ImageView img1, img2, img3, img4, img5, img6, img7, img8;
     private ImageView imgTocado1, imgTocado2;
     private int imagemImgTocado1, imagemImgTocado2, contaToque;
     private Handler handler;
@@ -46,20 +46,37 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener, R
         img2 = findViewById(R.id.imageView3);
         img3 = findViewById(R.id.imageView4);
         img4 = findViewById(R.id.imageView5);
+        img5 = findViewById(R.id.imageView6);
+        img6 = findViewById(R.id.imageView7);
+        img7 = findViewById(R.id.imageView8);
+        img8 = findViewById(R.id.imageView9);
+
         lista = new ArrayList<Integer>();
         lista.add(R.drawable.ic_action_name_3);
         lista.add(R.drawable.ic_action_name_3);
         lista.add(R.drawable.ic_action_name_4);
         lista.add(R.drawable.ic_action_name_4);
+        lista.add(R.drawable.ic_action_name);
+        lista.add(R.drawable.ic_action_name);
+        lista.add(R.drawable.ic_action_name_5);
+        lista.add(R.drawable.ic_action_name_5);
         Collections.shuffle(lista);
         img1.setImageResource(lista.get(0));
         img2.setImageResource(lista.get(1));
         img3.setImageResource(lista.get(2));
         img4.setImageResource(lista.get(3));
+        img5.setImageResource(lista.get(4));
+        img6.setImageResource(lista.get(5));
+        img7.setImageResource(lista.get(6));
+        img8.setImageResource(lista.get(7));
         img1.setOnClickListener(this);
         img2.setOnClickListener(this);
         img3.setOnClickListener(this);
         img4.setOnClickListener(this);
+        img5.setOnClickListener(this);
+        img6.setOnClickListener(this);
+        img7.setOnClickListener(this);
+        img8.setOnClickListener(this);
         handler = new Handler();
         handler.postDelayed(this, 3000);
         contaToque = 0;
@@ -148,6 +165,55 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener, R
                 compara(imagemImgTocado1,imagemImgTocado2);
             }
         }
+        if(view == img5){
+            img5.setImageResource(lista.get(4));
+            if(contaToque == 1)
+            {
+                imgTocado1 = img5;
+                imagemImgTocado1 = lista.get(4);
+            }else {
+                imgTocado2 = img5;
+                imagemImgTocado2 = lista.get(4);
+                compara(imagemImgTocado1,imagemImgTocado2);
+
+            }
+        }
+        if(view == img6){
+            img6.setImageResource(lista.get(5));
+            if(contaToque == 1)
+            {
+                imgTocado1 = img6;
+                imagemImgTocado1 = lista.get(5);
+            }else {
+                imgTocado2 = img6;
+                imagemImgTocado2 = lista.get(5);
+                compara(imagemImgTocado1,imagemImgTocado2);
+            }
+        }
+        if(view == img7){
+            img7.setImageResource(lista.get(6));
+            if(contaToque == 1)
+            {
+                imgTocado1 = img7;
+                imagemImgTocado1 = lista.get(6);
+            }else {
+                imgTocado2 = img7;
+                imagemImgTocado2 = lista.get(6);
+                compara(imagemImgTocado1,imagemImgTocado2);
+            }
+        }
+        if(view == img8){
+            img8.setImageResource(lista.get(7));
+            if(contaToque == 1)
+            {
+                imgTocado1 = img8;
+                imagemImgTocado1 = lista.get(7);
+            }else {
+                imgTocado2 = img8;
+                imagemImgTocado2 = lista.get(7);
+                compara(imagemImgTocado1,imagemImgTocado2);
+            }
+        }
     }
 
     @Override
@@ -156,6 +222,12 @@ public class Tela03 extends AppCompatActivity implements View.OnClickListener, R
         img2.setImageResource(R.drawable.ic_action_name_2);
         img3.setImageResource(R.drawable.ic_action_name_2);
         img4.setImageResource(R.drawable.ic_action_name_2);
+        img5.setImageResource(R.drawable.ic_action_name_2);
+        img6.setImageResource(R.drawable.ic_action_name_2);
+        img7.setImageResource(R.drawable.ic_action_name_2);
+        img8.setImageResource(R.drawable.ic_action_name_2);
+
+
 
 
 
