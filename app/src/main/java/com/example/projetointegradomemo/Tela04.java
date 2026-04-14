@@ -1,6 +1,8 @@
 package com.example.projetointegradomemo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +11,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Tela04 extends AppCompatActivity {
+
+    private TextView textoDoNome, quantJogadas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +24,20 @@ public class Tela04 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //...
+        quantJogadas = findViewById(R.id.textView5);
+        textoDoNome = findViewById(R.id.textView4);
+
+        Intent i = getIntent();
+        if(i != null){
+            Bundle caixa = new Bundle();
+            caixa = i.getExtras();
+            if(caixa != null){
+                textoDoNome.setText(caixa.getString("name"));
+                quantJogadas.setText(Integer.toString(caixa.getInt("cont")));
+            }
+        }
+
     }
 }
